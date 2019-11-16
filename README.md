@@ -10,6 +10,21 @@ Nosso modelo de negócios combina projetos de valor compartilhado com consultori
 
 Você pode esperar um trabalho intenso em projetos HTML5/CSS3 com o framework React, Angular e etc. 
 
+## Iniciando o projeto
+### Intalando os pacotes
+```bash
+npm i \\yarn 
+```
+### Variável de ambiente
+
+Criar e preencher o arquivo .env com as credências para Oauth da api do yahoo. Utilize o .env.exemple como exemplo.
+
+### Iniciando o projeto
+
+```bash
+npm start \\yarn start 
+```
+
 ## Como participar
 
 * Crie um novo fork e branch com seu nome-sobrenome e faça um pull request quando estiver pronto. Iremos fazer code review.
