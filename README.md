@@ -38,3 +38,11 @@ Mobile responsivo:
 * Branches com readme e instruções de implantação serão bem vindos.
 * Pré-processadores CSS como Stylus ou LESS também.
 * Que tal utilizar BEM nos identificadores css? http://getbem.com/naming/ 
+
+# Executar
+
+ - Será necessário o Node.js instalado na maquina
+ - Clone este repositório
+ - npm install ou yarn para instalar as dependecias necessárias
+ - Crie um arquivo .env como o .env.example e adicione as suas credênciais da Api do Yahoo
+ - yarn start
