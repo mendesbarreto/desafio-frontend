@@ -10,7 +10,7 @@ export default function InputSection() {
   const [city, setCity] = useState('');
 
   function handleChange(e) {
-    if (city === '') setSearchCity(e.target.value);
+    setSearchCity(e.target.value);
   }
 
   function handleClose() {
