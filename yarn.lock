@@ -3512,6 +3512,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
+date-fns@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.7.0.tgz#8271d943cc4636a1f27698f1b8d6a9f1ceb74026"
+  integrity sha512-wxYp2PGoUDN5ZEACc61aOtYFvSsJUylIvCjpjDOqM1UDaKIIuMJ9fAnMYFHV3TQaDpfTVxhwNK/GiCaHKuemTA==
+
 date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -7154,6 +7159,11 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
+oauth@^0.9.15:
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/oauth/-/oauth-0.9.15.tgz#bd1fefaf686c96b75475aed5196412ff60cfb9c1"
+  integrity sha1-vR/vr2hslrdUda7VGWQS/2DPucE=
+
 object-assign@4.1.1, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -8647,6 +8657,13 @@ react-error-overlay@^6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.3.tgz#c378c4b0a21e88b2e159a3e62b2f531fd63bf60d"
   integrity sha512-bOUvMWFQVk5oz8Ded9Xb7WVdEi3QGLC8tH7HmYP0Fdp4Bn3qw0tRFmr5TW6mvahzvmrK4a6bqWGfCevBflP+Xw==
+
+react-icons@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.8.0.tgz#229de5904809696c9f46932bd9b6126b2522866e"
+  integrity sha512-rA/8GRKjPulft8BSBSMsHkE1AGPqJ7LjNsyk0BE7XjG70Iz62zOled2SJk7LDo8x9z86a3xOstDlKlMZ4pAy7A==
+  dependencies:
+    camelcase "^5.0.0"
 
 react-is@^16.6.0, react-is@^16.8.4:
   version "16.12.0"

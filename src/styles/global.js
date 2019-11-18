@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
-    background: linear-gradient(#F98106, #FEBE00);
+    background: linear-gradient(#F98106, #FEBE00) fixed;
     color: #333;
   }
   h1,h2,h3,h4,h5,h6 {

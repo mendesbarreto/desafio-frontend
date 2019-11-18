@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "date-fns": "^2.7.0",
+    "oauth": "^0.9.15",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-icons": "^3.8.0",
     "react-scripts": "3.2.0",
     "styled-components": "^4.4.1"
   },
@@ -19,7 +23,6 @@
       "**/src/__tests__/**/*.test.js"
     ],
     "setupFilesAfterEnv": [
-      "@testing-library/react/cleanup-after-each",
       "@testing-library/jest-dom/extend-expect"
     ],
     "moduleNameMapper": {
