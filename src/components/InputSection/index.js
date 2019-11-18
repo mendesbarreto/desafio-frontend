@@ -14,9 +14,9 @@ export default function InputSection() {
   }
 
   function handleClose() {
+    setShow(false);
     setCity('');
     setSearchCity('');
-    setShow(false);
   }
 
   async function handleSubmit() {
