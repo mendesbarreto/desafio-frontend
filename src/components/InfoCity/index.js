@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { format, addDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { MdArrowDownward, MdArrowUpward, MdClose } from 'react-icons/md';
@@ -23,11 +24,21 @@ export default function InfoCity({ show, city, handleClose }) {
 
   useEffect(() => {
     async function loadWeather() {
-      await requestWeather(city).then(data => setCityInfo(data));
-      setMonted(true);
+      await requestWeather(city).then(data => {
+        if (data.current_observation.condition) {
+          setCityInfo(data);
+          setMonted(true);
+        } else {
+          toast.error(
+            'Erro ao tentar recuperar os dados, por favor confirme os dados'
+          );
+          handleClose();
+        }
+      });
     }
+
     if (show && city !== '') loadWeather();
-  }, [city, show]);
+  }, [city, handleClose, show]);
 
   return (
     monted && (

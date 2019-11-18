@@ -28,6 +28,7 @@ export const InputContainer = styled.div`
   }
 
   > svg {
+    cursor: pointer;
     position: absolute;
     top: 25px;
     right: 11px;

@@ -20,8 +20,10 @@ export default function InputSection() {
   }
 
   async function handleSubmit() {
-    setCity(searchCity);
-    setShow(true);
+    if (searchCity !== '') {
+      setCity(searchCity);
+      setShow(true);
+    }
   }
 
   return (
@@ -35,13 +37,13 @@ export default function InputSection() {
           type="text"
           onChange={handleChange}
           placeholder="Insira aqui o nome da cidade"
-          onKeyDown={e => {
+          onKeyUp={e => {
             if (e.key === 'Enter') handleSubmit();
           }}
           value={searchCity}
         />
 
-        <MdSearch size={35} color="#333" />
+        <MdSearch onClick={handleSubmit} size={35} color="#333" />
       </InputContainer>
     </Container>
   );
