@@ -15,7 +15,11 @@ export default function Information({ capital, closeBoxCapital }) {
   );
 }
 
+Information.defaultProps = {
+  capital: null,
+};
+
 Information.propTypes = {
-  capital: PropTypes.shape({}).isRequired,
+  capital: PropTypes.shape({}),
   closeBoxCapital: PropTypes.func.isRequired,
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as FontAwesome from 'react-icons/fa';
-import { api } from '../../services/api';
+import api from '../../services/api';
 
 import { Container, WrapInput } from './styles';
 import Information from '../../components/Information';

@@ -1,0 +1,3 @@
+export const client_secret = '426f9c8708b2e5e2ef9a8ab30ac5117f146cb819';
+export const client_id =
+  'dj0yJmk9UmVuWFcwQW8xV05mJmQ9WVdrOWRUSkpXazloTjJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWQ2';
