@@ -1,0 +1,21 @@
+.box-weather {
+  background: var(--light-orage);
+  padding: 24px 32px;
+}
+
+.city-selected {
+  font-size: large;
+  font-weight: 600;
+  color: #505050;
+}
+
+.weather-central {
+  margin: 18px 0;
+  color: #505050;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.space-items-right * {
+  padding-right: 8px;
+}

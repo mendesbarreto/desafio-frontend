@@ -1,0 +1,9 @@
+.box-week {
+  display: flex;
+  background: var(--light-orage);
+  flex-direction: row;
+}
+
+.box-week > * {
+  padding: 24px 32px;
+}
