@@ -1,5 +1,3 @@
-export * from './location';
-
 type keysLocalStorage = "token" | "refresh_token" | "timeout_token" | "saved_in"
 
 /**

@@ -18,22 +18,12 @@ import "./Weather.css"
 const Weather: React.FC = () => {
   const history = useHistory();
 
-  // const [location, setLocation] = useState({ latitude: -22.894910, longitude: -43.311441 });
   const [weatherCapitals, setWeatherCapitals] = useState(Array<WeatherLocationResponse>());
   const [currentCity, setCurrentCity] = useState({} as WeatherLocationResponse);
 
   useEffect(() => {
     checkStateUser();
   }, [])
-
-  /**
-   * Not work in all lat/long
-   */
-  // useEffect(() => {
-  //   WeatherService.getByLocation(location)
-  //     .then(res => setCurrentCity(res.data))
-  //     .catch(error => console.log(error));
-  // }, [location]);
 
   async function checkStateUser() {
     if (AuthService.hasToken) {
@@ -49,11 +39,6 @@ const Weather: React.FC = () => {
 
   function onFetchData() {
     fetchWeatherCapitals();
-
-    // getLocation((positon: Position) => {
-    //   const { latitude, longitude } = positon.coords;
-    //   setLocation({ latitude, longitude });
-    // });
   }
 
   async function fetchWeatherCapitals() {
