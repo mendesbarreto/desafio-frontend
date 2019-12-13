@@ -9,14 +9,15 @@ interface IBoxCondition {
   city: string;
   condition: string;
   temperature: number;
+  onClose?: () => void;
 }
 
-export const BoxCondition: React.FC<IBoxCondition> = ({ city, temperature, condition }) => {
+export const BoxCondition: React.FC<IBoxCondition> = ({ city, temperature, condition, onClose }) => {
   return (
     <div className="box-weather">
       <div className="flex justify-between">
         <h3 className="city-selected">{city}</h3>
-        <FontAwesomeIcon icon={faTimes} size="lg" color="var(--dark-orange)" />
+        <FontAwesomeIcon className="cursor" onClick={onClose} icon={faTimes} size="lg" color="var(--dark-orange)" />
       </div>
       <div className="weather-central">{temperature}°C {condition}</div>
       <div className="flex row flex-wrap">

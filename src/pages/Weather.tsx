@@ -75,7 +75,8 @@ const Weather: React.FC = () => {
             city={currentCity.location.city}
             temperature={currentCity.current_observation.condition.temperature}
             condition={currentCity.current_observation.condition.text}
-            forecasts={currentCity.forecasts} />
+            forecasts={currentCity.forecasts}
+            onClose={() => setCurrentCity({} as WeatherLocationResponse)} />
         )}
         <SearchBox onSearch={onSearch} />
         <Hr />

@@ -10,13 +10,14 @@ interface IBoxCity {
   city: string;
   condition: string;
   temperature: number;
-  forecasts: Forecast[]
+  forecasts: Forecast[];
+  onClose?: () => void;
 }
 
-const BoxCity: React.FC<IBoxCity> = ({ city, temperature, condition, forecasts }) => {
+const BoxCity: React.FC<IBoxCity> = ({ city, temperature, condition, forecasts, onClose }) => {
   return (
     <div className="shadow">
-      <BoxCondition city={city} temperature={temperature} condition={condition} />
+      <BoxCondition city={city} temperature={temperature} condition={condition} onClose={onClose} />
       <Hr color="var(--dark-orange)" />
       <BoxWeekWeather week={forecasts} />
     </div>
