@@ -7,17 +7,10 @@ interface Location {
 }
 
 class WeatherService extends ProxedService {
-
-  private comsumerKey: string;
-  private appId: string;
-
   constructor() {
-    const { REACT_APP_CONSUMER_KEY, REACT_APP_APP_ID, REACT_APP_API_WEATHER_YAHOO } = getEnvs();
+    const { REACT_APP_API_WEATHER_YAHOO } = getEnvs();
 
     super(REACT_APP_API_WEATHER_YAHOO!!);
-
-    this.comsumerKey = REACT_APP_CONSUMER_KEY!!;
-    this.appId = REACT_APP_APP_ID!!;
   }
 
 

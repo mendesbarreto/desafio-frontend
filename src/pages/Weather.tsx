@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import Header from '../components/Header';
 import SearchBox from '../components/SearchBox';
 import BoxCity from '../components/BoxCity';
-import BoxWeekWeather from "../components/BoxWeekWeather";
 import ListCapitals from "../components/ListCapitals";
 import Hr from "../components/Hr";
 
@@ -20,24 +19,26 @@ const Weather: React.FC = () => {
 
   const [weatherCapitals, setWeatherCapitals] = useState(Array<WeatherLocationResponse>());
   const [currentCity, setCurrentCity] = useState({} as WeatherLocationResponse);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     checkStateUser();
   }, [])
 
   async function checkStateUser() {
-    if (AuthService.hasToken) {
-      if (AuthService.tokenHasExpired) {
-        await AuthService.refreshToken();
-      }
-    } else {
+    if (AuthService.hasToken === false) {
       history.push('/autorization');
+    }
+
+    if (AuthService.tokenHasExpired) {
+      await AuthService.refreshToken();
     }
 
     onFetchData();
   }
 
   function onFetchData() {
+    setLoading(true);
     fetchWeatherCapitals();
   }
 
@@ -47,12 +48,13 @@ const Weather: React.FC = () => {
 
     for (let index = 0; index < capitals.length; index++) {
       const capital = capitals[index];
-      const res = await WeatherService.getByCity(capital)
+      const res = await WeatherService.getByCity(capital);
 
-      dataWeathers.push(res.data)
+      dataWeathers.push(res.data);
     }
 
-    setWeatherCapitals(dataWeathers)
+    setWeatherCapitals(dataWeathers);
+    setLoading(false);
   }
 
   function onSelectCity(_currentCity: WeatherLocationResponse) {
@@ -64,32 +66,20 @@ const Weather: React.FC = () => {
       .then(res => setCurrentCity(res.data));
   }
 
-  const CityCurrentCondition = () => {
-    console.log(currentCity);
-    if (!!currentCity.current_observation) {
-      return (
-        <div className="shadow-1">
-          <BoxCity
-            city={currentCity.location.city}
-            temperature={currentCity.current_observation.condition.temperature}
-            condition={currentCity.current_observation.condition.text} />
-          <Hr color="var(--dark-orange)" />
-          <BoxWeekWeather week={currentCity.forecasts || []} />
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-
   return (
     <div className="weather-page">
       <div className="wrapper">
         <Header title={"Previsão do Tempo"} />
-        <CityCurrentCondition />
+        {!!currentCity.current_observation && (
+          <BoxCity
+            city={currentCity.location.city}
+            temperature={currentCity.current_observation.condition.temperature}
+            condition={currentCity.current_observation.condition.text}
+            forecasts={currentCity.forecasts} />
+        )}
         <SearchBox onSearch={onSearch} />
         <Hr />
-        <ListCapitals capitals={weatherCapitals} onSelect={onSelectCity} />
+        <ListCapitals capitals={weatherCapitals} isLoading={loading} onSelect={onSelectCity} />
       </div>
     </div>
   )

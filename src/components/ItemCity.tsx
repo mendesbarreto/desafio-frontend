@@ -8,7 +8,7 @@ interface ItemCity {
 
 const ItemCity: React.FC<ItemCity> = ({ name, max, min }) => {
   return (
-    <div className="flex wrap justify-start font-strong pa-8">
+    <div className="flex cursor wrap justify-start font-strong pa-8">
       <span className="pr-8">{Math.round(max)}°</span>
       <span className="pr-8">{Math.round(min)}°</span>
       <span>{name}</span>

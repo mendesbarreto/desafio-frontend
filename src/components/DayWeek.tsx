@@ -11,8 +11,8 @@ const DayWeek: React.FC<IDayWeek> = ({ day, min, max }) => {
     <div className="flex col align-center font-strong">
       <span>{day}</span>
       <div className="row">
-        <span>{Math.round(min)}°</span>
-        <span>{Math.round(max)}°</span>
+        <span className="pr-8" style={{ color: 'var(--dark-orange)' }}>{Math.round(min)}°</span>
+        <span style={{ color: 'var(--dark-orange)' }}>{Math.round(max)}°</span>
       </div>
     </div>
   )

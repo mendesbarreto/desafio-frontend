@@ -5,7 +5,6 @@ import { ProxedService } from "./proxed.service";
 
 
 class AuthService extends ProxedService {
-
   private comsumerKey: string;
   private comsumerSecret: string;
 
@@ -31,11 +30,11 @@ class AuthService extends ProxedService {
   }
 
   get tokenHasExpired() {
-    const now = new Date().getTime()
-    const savedIn = new Date(loadLocalStorage('saved_in')!!).getTime();
-    const timeout_token = +loadLocalStorage('timeout_token')!!;
+    const now = new Date();
+    const savedIn = new Date(+loadLocalStorage('saved_in')!!);
 
-    const diffTime = now - savedIn;
+    const diffTime = Math.abs(now.getTime() - savedIn.getTime());
+    const timeout_token = +loadLocalStorage('timeout_token')!!;
 
     return diffTime > timeout_token
   }
@@ -74,9 +73,8 @@ class AuthService extends ProxedService {
       refresh_token: refreshToken
     });
 
-    console.log(bodyFormData)
-
     const res = await this.api.post('/oauth2/get_token', bodyFormData, { headers });
+
     saveLocalAuthData(res.data);
 
     return res.data;
