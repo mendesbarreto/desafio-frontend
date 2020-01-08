@@ -1,0 +1,18 @@
+.container-search {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #505050;
+  padding: 6px 12px;
+}
+
+.input__search {
+  border: none;
+  width: 100%;
+  font-size: 125%;
+  font-weight: 400;
+}
+
+.input__search:focus {
+  outline: none;
+}

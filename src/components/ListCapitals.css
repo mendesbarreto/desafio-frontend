@@ -1,0 +1,19 @@
+.title-list {
+  font-size: xx-large;
+  color: white;
+  font-weight: 600;
+  margin: 16px 8px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 400px) {
+  .list-container {
+    justify-content: start;
+  }
+}
