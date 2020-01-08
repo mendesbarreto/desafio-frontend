@@ -5,7 +5,7 @@ module.exports = {
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb"
+    "plugin:@typescript-eslint/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -19,10 +19,5 @@ module.exports = {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  "rules": {
-  }
+  "rules": {}
 };

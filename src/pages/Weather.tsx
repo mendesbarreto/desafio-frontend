@@ -27,7 +27,7 @@ const Weather: React.FC = () => {
 
   async function checkStateUser() {
     if (AuthService.hasToken === false) {
-      history.push('/autorization');
+      return history.push('/autorization');
     }
 
     if (AuthService.tokenHasExpired) {
